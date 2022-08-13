@@ -1,9 +1,8 @@
 import Debug from "debug";
 import chalk from "chalk";
-import express from "express";
+import app from "../loadApp";
 
 const debug = Debug("robots:startSever");
-const app = express();
 
 const startServer = (port: number) =>
   app.listen(port, () => {
