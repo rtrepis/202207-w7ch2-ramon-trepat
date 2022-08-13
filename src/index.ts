@@ -4,7 +4,7 @@ import robotsRouter from "./server/routers/robotsRouter";
 import connectDB from "./database/connectDB";
 import startServer from "./server/startServer";
 import app from "./loadApp";
-import endpointError from "./server/middlewares/errors";
+import { endpointError } from "./server/middlewares/errors";
 
 const port = process.env.PORT ?? 4000;
 const mongoURL = process.env.MONGO_URI;
