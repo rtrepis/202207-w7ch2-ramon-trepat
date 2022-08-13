@@ -5,7 +5,7 @@ const createCustomError = (
   publicMessage: string,
   privatMessage: string
 ) => {
-  const error = new Error() as CustomError;
+  const error: CustomError = new Error() as CustomError;
   error.code = code;
   error.publicMessage = publicMessage;
   error.privatMessage = privatMessage;
