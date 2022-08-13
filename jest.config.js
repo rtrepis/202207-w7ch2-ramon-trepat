@@ -13,5 +13,6 @@ module.exports = {
     "!src/loadEnvironment.ts",
     "!src/database/connectDB.ts",
     "!src/server/startServer.ts",
+    "!src/server/routers/robotsRouter.ts",
   ],
 };
