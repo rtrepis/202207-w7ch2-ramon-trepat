@@ -3,10 +3,6 @@ import express from "express";
 import chalk from "chalk";
 import morgan from "morgan";
 
-import dotenv from "dotenv";
-
-dotenv.config();
-
 const debug = Debug("robots:index");
 const app = express();
 
