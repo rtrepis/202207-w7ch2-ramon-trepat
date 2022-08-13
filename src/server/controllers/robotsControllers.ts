@@ -9,7 +9,7 @@ const getRobots = async (req: Request, res: Response) => {
   const robotList = await Robot.find({}, { _id: false });
 
   res.status(200).json({ robots: robotList });
-  debug(chalk.green("La lista de robots ha sido enviada con éxito"));
+  debug(chalk.green("The list of robots has been sent successfully"));
 };
 
 export default getRobots;
