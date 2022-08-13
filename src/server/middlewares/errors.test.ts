@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { endpointError } from "./errors";
+import endpointError from "./errors";
 
 describe("Given the endpointError middleware", () => {
   describe("When it receives a response", () => {

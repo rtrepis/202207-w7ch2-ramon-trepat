@@ -4,7 +4,7 @@ import chalk from "chalk";
 
 const debug = Debug("robots:server:middlewares:errors");
 
-export const endpointError = (req: Request, res: Response) => {
+const endpointError = (req: Request, res: Response) => {
   res.status(404).json({ error: "Endpoint not found" });
 
   debug(chalk.red("Client sends an unknown endpoint"));
