@@ -1,15 +1,15 @@
-import Debug from "debug";
+import "./loadEnvironment";
 import express from "express";
-import chalk from "chalk";
 import morgan from "morgan";
+import startServer from "./server/startServer";
+import connectDB from "./database/connectDB";
 
-const debug = Debug("robots:index");
 const app = express();
 
-const port = process.env.PORT;
+const port = process.env.PORT ?? 4000;
+const mongoURL = process.env.MONGO_URI;
 
 app.use(morgan("dev"));
 
-app.listen(port, () => {
-  debug(chalk.blue(`Serve listening on http://localhost:${port}`));
-});
+startServer(+port);
+connectDB(mongoURL);
