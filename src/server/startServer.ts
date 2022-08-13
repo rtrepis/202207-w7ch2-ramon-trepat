@@ -2,7 +2,7 @@ import Debug from "debug";
 import chalk from "chalk";
 import app from "../loadApp";
 
-const debug = Debug("robots:startSever");
+const debug = Debug("robots:server:startSever");
 
 const startServer = (port: number) =>
   new Promise((resolve, reject) => {

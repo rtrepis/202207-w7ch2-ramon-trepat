@@ -12,8 +12,7 @@ app.use(morgan("dev"));
 
 app.use("/robots", robotsRouter);
 
-connectDB(mongoURL);
-
 (async () => {
+  connectDB(mongoURL);
   startServer(+port);
 })();
