@@ -28,14 +28,14 @@ describe("Given the endpointError middleware", () => {
 });
 
 describe("Give the generalErors", () => {
-  describe("Then it recives a custom error and response", () => {
-    test("Then it should call the response with this erro and response", () => {
-      const req: Partial<Request> = {};
-      const res: Partial<Response> = {
-        status: jest.fn().mockReturnThis(),
-        json: jest.fn(),
-      };
-      const next = jest.fn();
+  const req: Partial<Request> = {};
+  const res: Partial<Response> = {
+    status: jest.fn().mockReturnThis(),
+    json: jest.fn(),
+  };
+  const next = jest.fn();
+  describe("Then it recives response with a custom error", () => {
+    test("Then it should call the response with this error", () => {
       const error = new Error() as CustomError;
       error.code = 409;
       error.privatMessage = "Privat Message";
@@ -47,6 +47,20 @@ describe("Give the generalErors", () => {
       expect(res.json).toHaveBeenCalledWith({ error: error.publicMessage });
     });
 
-    test("Then it should call the response method json with an endpoint error", () => {});
+    describe("Then it recives response without a custom error", () => {
+      test("Then it should call the response with error code 500 and 'There was an error' message", () => {
+        const errorNull = new Error() as CustomError;
+        errorNull.code = null;
+        errorNull.privatMessage = null;
+        errorNull.publicMessage = null;
+        const expectCode = 500;
+        const expectPublicMessage = "There was an error";
+
+        generalError(errorNull, req as Request, res as Response, next);
+
+        expect(res.status).toHaveBeenCalledWith(expectCode);
+        expect(res.json).toHaveBeenCalledWith({ error: expectPublicMessage });
+      });
+    });
   });
 });
