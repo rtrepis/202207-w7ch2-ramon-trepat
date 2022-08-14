@@ -14,5 +14,6 @@ module.exports = {
     "!src/database/connectDB.ts",
     "!src/server/startServer.ts",
     "!src/server/routers/robotsRouter.ts",
+    "!src/configCors.ts",
   ],
 };
