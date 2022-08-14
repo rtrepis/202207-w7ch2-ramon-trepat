@@ -8,7 +8,7 @@ const debug = Debug("robots:server:controllers:robotsController");
 const getRobots = async (req: Request, res: Response) => {
   const robotList = await Robot.find({}, { _id: false });
 
-  res.status(200).json({ robots: robotList });
+  res.status(200).json(robotList);
   debug(chalk.green("The list of robots has been sent successfully"));
 };
 
