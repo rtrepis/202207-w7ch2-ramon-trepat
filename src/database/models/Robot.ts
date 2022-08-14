@@ -1,13 +1,32 @@
 import { Schema, model } from "mongoose";
 
 const robotSchema = new Schema({
-  id: String,
-  name: String,
-  img: String,
+  id: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  name: {
+    type: Number,
+    required: true,
+  },
+  img: {
+    type: String,
+    required: true,
+  },
   specs: {
-    speed: Number,
-    stamina: Number,
-    createDate: String,
+    speed: {
+      type: Number,
+      required: true,
+    },
+    stamina: {
+      type: Number,
+      required: true,
+    },
+    createDate: {
+      type: Number,
+      required: true,
+    },
   },
 });
 
