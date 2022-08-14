@@ -1,5 +1,5 @@
 interface Robot {
-  id: number;
+  id: string;
   name: string;
   img: string;
   specs: {
