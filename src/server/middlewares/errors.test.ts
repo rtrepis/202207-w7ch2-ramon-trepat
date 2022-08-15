@@ -50,9 +50,6 @@ describe("Give the generalErors", () => {
     describe("Then it recives response without a custom error", () => {
       test("Then it should call the response with error code 500 and 'There was an error' message", () => {
         const errorNull = new Error() as CustomError;
-        errorNull.code = null;
-        errorNull.privatMessage = null;
-        errorNull.publicMessage = null;
         const expectCode = 500;
         const expectPublicMessage = "There was an error";
 
