@@ -1,11 +1,6 @@
 import { Schema, model } from "mongoose";
 
 const robotSchema = new Schema({
-  id: {
-    type: String,
-    required: true,
-    unique: true,
-  },
   name: {
     type: String,
     required: true,
@@ -24,7 +19,7 @@ const robotSchema = new Schema({
       required: true,
     },
     createDate: {
-      type: Number,
+      type: Date,
       required: true,
     },
   },
