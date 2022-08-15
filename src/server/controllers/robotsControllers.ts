@@ -21,21 +21,11 @@ export const deleteRobot = async (
   const { idRobot } = req.params;
 
   try {
-    const robot = await Robot.findById({ _id: idRobot });
-
-    if (!robot) {
-      const customError = createCustomError(
-        404,
-        "Robot id doesn't exist",
-        `User introduced ${idRobot} and doesn't exists`
-      );
-      next(customError);
-      return;
-    }
+    await Robot.findById({ _id: idRobot });
 
     await Robot.deleteOne({ _id: idRobot });
 
-    res.status(202).json({});
+    res.status(202).json({ message: "Robot has been deleted" });
   } catch (error) {
     const customError = createCustomError(
       404,
