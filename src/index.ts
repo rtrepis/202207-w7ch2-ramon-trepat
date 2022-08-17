@@ -8,6 +8,6 @@ const mongoURL = process.env.MONGO_URI;
 // eslint-disable-next-line consistent-return
 
 (async () => {
-  connectDB(mongoURL);
-  startServer(+port);
+  await connectDB(mongoURL);
+  await startServer(+port);
 })();

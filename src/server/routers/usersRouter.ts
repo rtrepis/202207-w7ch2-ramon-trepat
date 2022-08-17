@@ -3,6 +3,6 @@ import loginUser from "../controllers/usersControllers";
 
 const userRouter = express.Router();
 
-userRouter.post("/login", loginUser);
+userRouter.post("/", loginUser);
 
 export default userRouter;

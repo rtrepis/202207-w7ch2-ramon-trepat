@@ -11,10 +11,10 @@ const loginUser = (req: Request, res: Response) => {
   const user: Iuser = req.body;
 
   const payLoad: IpayLoad = {
-    id: "sdfgs4gs5r",
-    userName: user.userName,
+    id: "223345533",
+    userName: "llili",
   };
-  debugger;
+
   const responseData = { user: { token: createToken(payLoad) } };
 
   res.status(200).json(responseData);
